@@ -2,15 +2,15 @@ class BlobPlayer {
   constructor() {
     this.x = 0;
     this.y = 0;
-    this.r = 26;
+    this.r = 20;
     this.vx = 0;
     this.vy = 0;
 
     this.accel = 0.55;
     this.maxRun = 4.0;
 
-    this.gravity = 0.65;
-    this.jumpV = -11.0;
+    this.gravity = 0.12;
+    this.jumpV = -25;
 
     this.frictionAir = 0.995;
     this.frictionGround = 0.88;
@@ -95,7 +95,6 @@ class BlobPlayer {
     this.x = box.x + box.w / 2;
     this.y = box.y + box.h / 2;
 
-    // keep inside world horizontally, allow falling below world
     this.x = constrain(this.x, this.r, level.w - this.r);
 
     this.t += this.tSpeed;

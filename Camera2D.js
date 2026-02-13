@@ -6,9 +6,9 @@ class Camera2D {
     this.y = 0;
   }
 
-  followSideScrollerX(targetX, lerpAmt) {
-    const desired = targetX - this.viewW / 2;
-    this.x = lerp(this.x, desired, lerpAmt);
+  followVertical(targetY, lerpAmt) {
+    const desired = targetY - this.viewH / 2;
+    this.y = lerp(this.y, desired, lerpAmt);
   }
 
   clampToWorld(worldW, worldH) {
@@ -22,6 +22,7 @@ class Camera2D {
     push();
     translate(-this.x, -this.y);
   }
+
   end() {
     pop();
   }
